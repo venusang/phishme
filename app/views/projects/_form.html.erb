@@ -1,0 +1,41 @@
+<%= form_for(@project) do |f| %>
+  <% if @project.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@project.errors.count, "error") %>
+        prohibited this project from being saved:
+      </h2>
+
+      <ul>
+      <% @project.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title, :size => "80" %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+  <script type="text/javascript">
+  var auth_token = $('input[name="authenticity_token"]').val();
+  var utf8 = '✓';
+  var $title = $('#project_title');
+
+  function test_save()
+  {
+    $.ajax({ url: '/projects.json', type: 'post',
+      data: {
+        project: { title: $title.val()},
+        utf8: utf8,
+        autheticity_token: auth_token,
+      }
+    });
+  }
+  </script>
+<% end %>
