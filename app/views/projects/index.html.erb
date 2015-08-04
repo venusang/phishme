@@ -1,18 +1,63 @@
-<h2>Projects</h2>
+<div id="projects-main">
+	<!-- @projects.sort_by{|project| project.title.downcase} -->
 
-<ul>
-  <% if @projects.empty? %>
-  <li>No projects.</li>
-  <% end %>
-<% @projects.each do |project| %>
-<li>
-  <%= link_to project.title,  project_path(project) %>
-  <span>
-    <%= link_to 'Destroy', project,
-                method: :delete, data: { confirm: 'Are you sure?' } %>
-  </span>
-</li>
-<% end %>
-</ul>
+	<ul class="nav nav-tabs" role="tablist">
+	  <li role="presentation" class="active"><a href="#by_title" aria-controls="by_title" role="tab" data-toggle="tab" >By Title</a></li>
+	  <li role="presentation"><a data-target="#created_by" data-toggle="tab">By Date</a></li>
+	  <li role="presentation"><a data-target="#updated_by" data-toggle="tab">Last Updated</a></li>
+	</ul>
 
-<%= link_to 'New Project', new_project_path %>
+<div class="tab-content">
+
+<!-- DEFAULT BY TITLE -->
+	<div role="tabpanel" class="tab-pane active" id="by_title">
+		<ul class="list-group list-unstyled">
+			<% if @projects.empty? %>
+				<li class="list-group-item">No projects.</li>
+			<% end %>
+
+			<% @project_by_title.each do |project| %>
+				<li>
+					<%= link_to project.title,  project_path(project), class:"list-group-item" %>
+					<%= link_to '<i class="fa fa-remove"></i>'.html_safe, project,
+					method: :delete, data: { confirm: 'Are you sure?' }, class: "remove-btn btn" %>
+				</li>
+			<% end %>
+		</ul>
+	</div>
+
+<!-- CREATED BY  -->
+	<div role="tabpanel" class="tab-pane" id="created_by">
+		<ul class="list-group list-unstyled">
+			<% if @projects.empty? %>
+				<li class="list-group-item">No projects.</li>
+			<% end %>
+			<% @projects_created_at.each do |project| %>
+				<li>
+						<%= link_to project.title + ' (' + project.created_at.strftime("%b %-d, %Y %r")+')',  project_path(project),class:"list-group-item" %>
+						<%= link_to '<i class="fa fa-remove"></i>'.html_safe, project,
+				        method: :delete, data: { confirm: 'Are you sure?' }, class: "remove-btn btn" %>
+				</li>
+			<% end %>
+		</ul>
+	</div>
+
+<!-- UPDATED BY  -->
+	<div role="tabpanel" class="tab-pane" id="updated_by">
+		<ul class="list-group list-unstyled">
+			<% if @projects.empty? %>
+				<li class="list-group-item">No projects.</li>
+			<% end %>
+			<% @projects_updated_at.each do |project| %>
+				<li>
+						<%= link_to project.title + ' (' + project.updated_at.strftime("%b %-d, %Y %r")+')',  project_path(project),class:"list-group-item" %>
+						<%= link_to '<i class="fa fa-remove"></i>'.html_safe, project,
+				        method: :delete, data: { confirm: 'Are you sure?' }, class: "remove-btn btn" %>
+				</li>
+			<% end %>
+		</ul>
+	</div>
+
+</div><!-- tab-content -->
+
+</div><!-- projects-main -->

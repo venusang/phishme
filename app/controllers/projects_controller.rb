@@ -3,6 +3,12 @@ class ProjectsController < ApplicationController
 
   def index
     @projects = Project.all
+
+    @project_by_title =  @projects.sort_by {|obj| obj.title }
+    @projects_created_at = @projects.sort_by {|obj| obj.created_at }.reverse
+    @projects_updated_at = @projects.sort_by {|obj| obj.updated_at }.reverse
+
+
     respond_to do |format|
       format.html
       format.json { render :json => @projects }

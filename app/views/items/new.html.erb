@@ -16,10 +16,11 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :action %><br>
-    <%= f.text_field :action, :size => "80" %>
+    <%= f.label :action %><br />
+    <%= f.text_field :action, :size => "80", :class =>"form-control" %><br />
   </div>
+
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :class => "btn btn-primary" %>
   </div>
 <% end %>

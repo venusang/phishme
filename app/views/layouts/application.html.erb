@@ -6,27 +6,39 @@
     <script src="http://html5.shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <title>Todo App</title>
+    <link href='http://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
     <%= stylesheet_link_tag    "application", media: "all" %>
+    
+
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
   </head>
+
+
   <body>
-    <header>
-      <h1>Todo app</h1>
-      <nav>
-        <ul>
-          <li><%= link_to 'Projects', projects_path %></li>
-        </ul>
-      </nav>
-    </header>
 
-    <div id="main">
-      <p id="notice"><%= notice %></p>
-      <%= yield %>
+  <div class="container">
+    <div class="wrapper">
+    <div class="col-md-5">
+    <div class="page-header">
+      <ul class="list-inline list-unstyled">
+        <li><h2>My Projects</h2></li>
+        <li><%= link_to '<i class="fa fa-plus"></i> add new project'.html_safe, new_project_path, class: "btn btn-primary ", id:"btn-new-project" %></li>
+      </ul>   
+       <div class="text-right"><%= link_to 'View All Projects', projects_path %></div>  
     </div>
+   
+    <% if notice %>
+        <div id="notice" class="alert alert-warning alert-dismissible" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <%= notice %>
+        </div>
 
-    <footer>
-      <p>2015</p>
-    </footer>
+    <% end %>
+      <%= yield %>
+
+      </div>
+      </div><!-- wrapper -->
+    </div><!-- container -->
   </body>
 </html>

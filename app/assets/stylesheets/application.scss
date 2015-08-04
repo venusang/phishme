@@ -1,0 +1,56 @@
+/* Bootstrap overrides */
+/* $body-bg: #394A59; */
+$font-family-sans-serif:	'Questrial', sans-serif;
+$brand-primary:				darken(#337ab7 , 6.5%) !default; 
+$link-color:				#333;
+
+/* Import Boostrap */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* Important Font-Awesome */
+@import "font-awesome";
+
+.project-title{
+	color:#e63c2e;
+}
+
+#left-nav{
+	border-radius: 4px;
+	padding: 0.50em;
+	background: #efefef;
+	min-height: 200px;
+	height: 100%;
+	h3{
+		padding:0;
+		margin: 0;
+	}
+}
+#projects-main {
+	.fa-remove {
+		opacity: 0.50;
+	}
+	.fa-remove:hover{
+		opacity: 1;
+	}
+
+	ul.list-group li{
+		position: relative;
+		.remove-btn{
+			position: absolute;
+			right: 10px;
+			top: 5px;
+
+		}
+	}
+}
+
+.nav-tabs li:hover{
+	cursor: pointer;
+}
+
+.tab-pane{
+	margin-top: 10px;
+}
+
+
