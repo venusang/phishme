@@ -4,12 +4,23 @@ $font-family-sans-serif:	'Questrial', sans-serif;
 $brand-primary:				darken(#337ab7 , 6.5%) !default; 
 $link-color:				#333;
 
+
+$border-radius-base:        0px !default;
+$border-radius-large:       0px !default;
+$border-radius-small:       0px !default;
+
+
+
 /* Import Boostrap */
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
 /* Important Font-Awesome */
 @import "font-awesome";
+
+label{
+	color: $brand-primary;
+}
 
 .project-title{
 	color:#e63c2e;
@@ -53,4 +64,7 @@ $link-color:				#333;
 	margin-top: 10px;
 }
 
+.list-group li.header{
+	background: $state-warning-bg;
+}
 

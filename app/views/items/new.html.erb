@@ -1,26 +1,30 @@
-<h2>New Item</h2>
+<h4>Project:&nbsp;<%= @project.title %></h4>
 <%= form_for([@project, @item]) do |f| %>
   <% if @item.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@item.errors.count, "error") %>
-        prohibited this project from being saved:
-      </h2>
-
-      <ul>
-      <% @item.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+    <div id="notice" class="alert alert-danger alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div id="error_explanation">
+           <span class="label label-danger"><%= pluralize(@item.errors.count, "error") %></span>
+          prohibited this project from being saved:
+        <ul class="list-unstyled">
+        <% @item.errors.full_messages.each do |msg| %>
+          <li><i class="fa fa-warning "></i> <%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :action %><br />
-    <%= f.text_field :action, :size => "80", :class =>"form-control" %><br />
+  <div class="form-group">
+    <%= f.label :action, 'What needs to get done?'%><span class="text-muted"> (add new item)</span>
+    <%= f.text_field :action, :size => "80", :class =>"form-control" %>
   </div>
 
-  <div class="actions">
-    <%= f.submit :class => "btn btn-primary" %>
-  </div>
+  <ul class="list list-unstyled list-inline">
+    <li><div class="actions"><%= f.submit 'Add New Item', :class => "btn btn-warning" %></div></li>
+    <li><%= link_to 'cancel', project_path, class: "btn btn-default" %></li>
+  </ul>
+
+
+
 <% end %>

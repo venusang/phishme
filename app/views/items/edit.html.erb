@@ -1,4 +1,6 @@
-<h2>Edit Item</h2>
+
+<h4>Project: <%= @project.title %></h4>
+
 <%= form_for([@project, @item], :url => { :action => :update }) do |f| %>
   <% if @item.errors.any? %>
     <div id="error_explanation">
@@ -14,16 +16,18 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :action %><br>
-    <%= f.text_field :action, :size => "80" %>
+  <div class="form-group">
+    <%= f.label :action, 'What needs to get done?' %><span class="text-muted"> (edit item)</span><br>
+    <%= f.text_field :action, :size => "80", :class => "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :done, 'Done?' %>
+  <div class="form-group">
+    <%= f.label :done, 'Is this item completed?  Click the box if yes.&nbsp;'.html_safe %>
     <%= f.check_box :done %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
+  <ul class="list list-unstyled list-inline">
+    <li><div class="actions"><%= f.submit :class => "btn btn-warning" %></div></li>
+    <li><%= link_to 'cancel', :back , class: "btn btn-default" %></li>
+    
+  </ul>
 <% end %>

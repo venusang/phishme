@@ -1,14 +1,15 @@
-  <% if @project.items.empty? %>
-  <div class="well">
-        <h4 class="project-title"><%= link_to @project.title+' (click to rename)', edit_project_path(@project) %> </h4>
-
-        <p>There are no items to list.
-        <%= link_to '<i class="fa fa-plus"></i> add new item'.html_safe, new_project_item_path(project), :class => "btn btn-default text-right" %></p>
-      </div>
-    <% else %>
-    
     <ul class="list-group list-unstyled">
-      <li class="list-group-item header">      <h4 class="project-title"><%= link_to @project.title+' (click to rename)', edit_project_path(@project) %> </h4></li>
+      <li class="list-group-item header">
+        <h4 class="project-title"><%= link_to @project.title, edit_project_path(@project) %> </h4>
+      </li>
+      <% if @project.items.empty? %>
+      <li class="list-group-item">
+        <div class="alert alert-info">
+          <p>There are no items to list.
+          <%= link_to '<i class="fa fa-plus"></i> add new item'.html_safe, new_project_item_path(project), :class => "btn btn-default text-right" %></p>
+        </div>
+      </li>
+    <% else %>
 
     <% @project.items.each do |item| %>
       <li class="list-group-item <%= "#{item.done? ? 'done' : 'not-done'}" %>">
@@ -26,11 +27,10 @@
         
       </li>
     <% end %>
-      <li class="list-group-item text-right"> <%= link_to '<i class="fa fa-plus"></i> Add New Item...'.html_safe, new_project_item_path(project) %></li>
+      <li class="list-group-item add-new-item text-right"> <%= link_to '<i class="fa fa-plus"></i> Add New Item...'.html_safe, new_project_item_path(project) %></li>
     </ul>
 
-
-    <%= link_to 'Clear Completed Items', clear_project_path(project),
-          :method => :delete, :id => "clearer", :class => "btn btn-sm btn-primary" %>
+    <%= link_to '<i class="fa fa-eraser"></i> Clear Completed Items'.html_safe, clear_project_path(project),
+          :method => :delete, :id => "clearer" %>
 
   <% end %>
