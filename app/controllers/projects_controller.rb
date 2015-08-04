@@ -55,8 +55,8 @@ class ProjectsController < ApplicationController
     @project.destroy
     respond_to do |format|
       format.html { redirect_to projects_path,
-                    :notice => 'Project was successfully destroyed.' }
-      format.json { render :json => {'notice': 'Project was sucessfully destroyed'}}
+                    :notice => 'Project was successfully removed.' }
+      format.json { render :json => {'notice': 'Project was sucessfully removed.'}}
     end
   end
 
