@@ -52251,3 +52251,273 @@ Started GET "/assets/homewave-downgray-ab629b34375099ea999a129e8b5e026d.png" for
 
 
 Started GET "/assets/fontawesome-webfont-bdd5fe963cf9a6bcf9c449166e2e5a57.woff2?v=4.3.0" for 127.0.0.1 at 2015-08-04 17:32:41 -0700
+
+
+Started GET "/projects" for 127.0.0.1 at 2015-08-04 17:36:17 -0700
+Processing by ProjectsController#index as HTML
+  [1m[36m (1.3ms)[0m  [1mSELECT COUNT(*) FROM "projects"[0m
+  [1m[35mProject Load (0.4ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered projects/index.html.erb within layouts/application (73.0ms)
+Completed 200 OK in 373ms (Views: 341.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-08-04 17:36:17 -0700
+
+
+Started GET "/assets/application-85e8299969dcdf6445c473376e6932ed.css?body=1" for 127.0.0.1 at 2015-08-04 17:36:17 -0700
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-08-04 17:36:17 -0700
+
+
+Started GET "/assets/bootstrap-b7681517ae4d87fcbf10ede9bc06c7da.js?body=1" for 127.0.0.1 at 2015-08-04 17:36:17 -0700
+
+
+Started GET "/assets/application-00d05e52b03b2ba8c374b10c33dd4286.js?body=1" for 127.0.0.1 at 2015-08-04 17:36:17 -0700
+
+
+Started GET "/assets/projects-46c9a194bd0668e67d57241f94473dc8.js?body=1" for 127.0.0.1 at 2015-08-04 17:36:17 -0700
+
+
+Started GET "/assets/homewave-downgray-ab629b34375099ea999a129e8b5e026d.png" for 127.0.0.1 at 2015-08-04 17:36:17 -0700
+
+
+Started GET "/assets/fontawesome-webfont-bdd5fe963cf9a6bcf9c449166e2e5a57.woff2?v=4.3.0" for 127.0.0.1 at 2015-08-04 17:36:17 -0700
+
+
+Started GET "/projects" for 127.0.0.1 at 2015-08-04 17:36:22 -0700
+Processing by ProjectsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "projects"[0m
+  [1m[35mProject Load (0.1ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered projects/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 111ms (Views: 108.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-08-04 17:36:22 -0700
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-08-04 17:36:22 -0700
+
+
+Started GET "/assets/projects-46c9a194bd0668e67d57241f94473dc8.js?body=1" for 127.0.0.1 at 2015-08-04 17:36:22 -0700
+
+
+Started GET "/assets/application-00d05e52b03b2ba8c374b10c33dd4286.js?body=1" for 127.0.0.1 at 2015-08-04 17:36:22 -0700
+
+
+Started GET "/assets/bootstrap-b7681517ae4d87fcbf10ede9bc06c7da.js?body=1" for 127.0.0.1 at 2015-08-04 17:36:22 -0700
+
+
+Started GET "/assets/application-85e8299969dcdf6445c473376e6932ed.css?body=1" for 127.0.0.1 at 2015-08-04 17:36:22 -0700
+
+
+Started GET "/assets/fontawesome-webfont-bdd5fe963cf9a6bcf9c449166e2e5a57.woff2?v=4.3.0" for 127.0.0.1 at 2015-08-04 17:36:22 -0700
+
+
+Started GET "/assets/homewave-downgray-ab629b34375099ea999a129e8b5e026d.png" for 127.0.0.1 at 2015-08-04 17:36:22 -0700
+
+
+Started GET "/projects/19" for 127.0.0.1 at 2015-08-04 17:36:24 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 19]]
+  [1m[35mItem Exists (0.3ms)[0m  SELECT  1 AS one FROM "items" WHERE "items"."project_id" = ? LIMIT 1  [["project_id", 19]]
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."project_id" = ?[0m  [["project_id", 19]]
+  Rendered items/_index.html.erb (17.6ms)
+  Rendered projects/show.html.erb within layouts/application (21.5ms)
+Completed 200 OK in 131ms (Views: 127.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application-85e8299969dcdf6445c473376e6932ed.css?body=1" for 127.0.0.1 at 2015-08-04 17:36:24 -0700
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-08-04 17:36:25 -0700
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-08-04 17:36:25 -0700
+
+
+Started GET "/assets/application-00d05e52b03b2ba8c374b10c33dd4286.js?body=1" for 127.0.0.1 at 2015-08-04 17:36:25 -0700
+
+
+Started GET "/assets/bootstrap-b7681517ae4d87fcbf10ede9bc06c7da.js?body=1" for 127.0.0.1 at 2015-08-04 17:36:25 -0700
+
+
+Started GET "/assets/projects-46c9a194bd0668e67d57241f94473dc8.js?body=1" for 127.0.0.1 at 2015-08-04 17:36:25 -0700
+
+
+Started GET "/assets/fontawesome-webfont-bdd5fe963cf9a6bcf9c449166e2e5a57.woff2?v=4.3.0" for 127.0.0.1 at 2015-08-04 17:36:25 -0700
+
+
+Started GET "/assets/homewave-downgray-ab629b34375099ea999a129e8b5e026d.png" for 127.0.0.1 at 2015-08-04 17:36:25 -0700
+
+
+Started GET "/projects/19/items/17/edit" for 127.0.0.1 at 2015-08-04 17:36:28 -0700
+Processing by ItemsController#edit as HTML
+  Parameters: {"project_id"=>"19", "id"=>"17"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 19]]
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."project_id" = ? AND "items"."id" = ? LIMIT 1[0m  [["project_id", 19], ["id", 17]]
+  Rendered items/edit.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 104ms (Views: 96.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-08-04 17:36:28 -0700
+
+
+Started GET "/assets/application-85e8299969dcdf6445c473376e6932ed.css?body=1" for 127.0.0.1 at 2015-08-04 17:36:28 -0700
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-08-04 17:36:28 -0700
+
+
+Started GET "/assets/projects-46c9a194bd0668e67d57241f94473dc8.js?body=1" for 127.0.0.1 at 2015-08-04 17:36:28 -0700
+
+
+Started GET "/assets/bootstrap-b7681517ae4d87fcbf10ede9bc06c7da.js?body=1" for 127.0.0.1 at 2015-08-04 17:36:28 -0700
+
+
+Started GET "/assets/application-00d05e52b03b2ba8c374b10c33dd4286.js?body=1" for 127.0.0.1 at 2015-08-04 17:36:28 -0700
+
+
+Started GET "/assets/homewave-downgray-ab629b34375099ea999a129e8b5e026d.png" for 127.0.0.1 at 2015-08-04 17:36:28 -0700
+
+
+Started GET "/assets/fontawesome-webfont-bdd5fe963cf9a6bcf9c449166e2e5a57.woff2?v=4.3.0" for 127.0.0.1 at 2015-08-04 17:36:28 -0700
+
+
+Started GET "/projects/19" for 127.0.0.1 at 2015-08-04 17:36:30 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 19]]
+  [1m[36mItem Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "items" WHERE "items"."project_id" = ? LIMIT 1[0m  [["project_id", 19]]
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" WHERE "items"."project_id" = ?  [["project_id", 19]]
+  Rendered items/_index.html.erb (4.8ms)
+  Rendered projects/show.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 73ms (Views: 70.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application-85e8299969dcdf6445c473376e6932ed.css?body=1" for 127.0.0.1 at 2015-08-04 17:36:30 -0700
+
+
+Started GET "/assets/bootstrap-b7681517ae4d87fcbf10ede9bc06c7da.js?body=1" for 127.0.0.1 at 2015-08-04 17:36:30 -0700
+
+
+Started GET "/assets/application-00d05e52b03b2ba8c374b10c33dd4286.js?body=1" for 127.0.0.1 at 2015-08-04 17:36:30 -0700
+
+
+Started GET "/assets/projects-46c9a194bd0668e67d57241f94473dc8.js?body=1" for 127.0.0.1 at 2015-08-04 17:36:30 -0700
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-08-04 17:36:30 -0700
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-08-04 17:36:30 -0700
+
+
+Started GET "/assets/homewave-downgray-ab629b34375099ea999a129e8b5e026d.png" for 127.0.0.1 at 2015-08-04 17:36:30 -0700
+
+
+Started GET "/assets/fontawesome-webfont-bdd5fe963cf9a6bcf9c449166e2e5a57.woff2?v=4.3.0" for 127.0.0.1 at 2015-08-04 17:36:30 -0700
+
+
+Started GET "/projects" for 127.0.0.1 at 2015-08-04 17:36:31 -0700
+Processing by ProjectsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "projects"[0m
+  [1m[35mProject Load (0.2ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered projects/index.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 69ms (Views: 67.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application-85e8299969dcdf6445c473376e6932ed.css?body=1" for 127.0.0.1 at 2015-08-04 17:36:31 -0700
+
+
+Started GET "/assets/bootstrap-b7681517ae4d87fcbf10ede9bc06c7da.js?body=1" for 127.0.0.1 at 2015-08-04 17:36:31 -0700
+
+
+Started GET "/assets/projects-46c9a194bd0668e67d57241f94473dc8.js?body=1" for 127.0.0.1 at 2015-08-04 17:36:31 -0700
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-08-04 17:36:31 -0700
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-08-04 17:36:31 -0700
+
+
+Started GET "/assets/application-00d05e52b03b2ba8c374b10c33dd4286.js?body=1" for 127.0.0.1 at 2015-08-04 17:36:31 -0700
+
+
+Started GET "/assets/homewave-downgray-ab629b34375099ea999a129e8b5e026d.png" for 127.0.0.1 at 2015-08-04 17:36:31 -0700
+
+
+Started GET "/assets/fontawesome-webfont-bdd5fe963cf9a6bcf9c449166e2e5a57.woff2?v=4.3.0" for 127.0.0.1 at 2015-08-04 17:36:31 -0700
+
+
+Started GET "/projects/20" for 127.0.0.1 at 2015-08-04 17:36:32 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 20]]
+  [1m[35mItem Exists (0.1ms)[0m  SELECT  1 AS one FROM "items" WHERE "items"."project_id" = ? LIMIT 1  [["project_id", 20]]
+  Rendered items/_index.html.erb (2.0ms)
+  Rendered projects/show.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 122ms (Views: 120.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-08-04 17:36:32 -0700
+
+
+Started GET "/assets/application-85e8299969dcdf6445c473376e6932ed.css?body=1" for 127.0.0.1 at 2015-08-04 17:36:32 -0700
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-08-04 17:36:32 -0700
+
+
+Started GET "/assets/bootstrap-b7681517ae4d87fcbf10ede9bc06c7da.js?body=1" for 127.0.0.1 at 2015-08-04 17:36:32 -0700
+
+
+Started GET "/assets/projects-46c9a194bd0668e67d57241f94473dc8.js?body=1" for 127.0.0.1 at 2015-08-04 17:36:32 -0700
+
+
+Started GET "/assets/application-00d05e52b03b2ba8c374b10c33dd4286.js?body=1" for 127.0.0.1 at 2015-08-04 17:36:32 -0700
+
+
+Started GET "/assets/homewave-downgray-ab629b34375099ea999a129e8b5e026d.png" for 127.0.0.1 at 2015-08-04 17:36:32 -0700
+
+
+Started GET "/assets/fontawesome-webfont-bdd5fe963cf9a6bcf9c449166e2e5a57.woff2?v=4.3.0" for 127.0.0.1 at 2015-08-04 17:36:32 -0700
+
+
+Started GET "/assets/application-85e8299969dcdf6445c473376e6932ed.css?body=1" for 127.0.0.1 at 2015-08-04 17:36:42 -0700
+
+
+Started GET "/projects/20" for 127.0.0.1 at 2015-08-04 17:38:18 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mProject Load (1.7ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 20]]
+  [1m[35mItem Exists (0.4ms)[0m  SELECT  1 AS one FROM "items" WHERE "items"."project_id" = ? LIMIT 1  [["project_id", 20]]
+  Rendered items/_index.html.erb (34.5ms)
+  Rendered projects/show.html.erb within layouts/application (40.3ms)
+Completed 200 OK in 3849ms (Views: 3824.3ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-08-04 17:38:22 -0700
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-08-04 17:38:22 -0700
+
+
+Started GET "/assets/projects-46c9a194bd0668e67d57241f94473dc8.js?body=1" for 127.0.0.1 at 2015-08-04 17:38:22 -0700
+
+
+Started GET "/assets/application-00d05e52b03b2ba8c374b10c33dd4286.js?body=1" for 127.0.0.1 at 2015-08-04 17:38:22 -0700
+
+
+Started GET "/assets/bootstrap-b7681517ae4d87fcbf10ede9bc06c7da.js?body=1" for 127.0.0.1 at 2015-08-04 17:38:22 -0700
+
+
+Started GET "/assets/application-221dbdd7711994f06d552797868ea9e6.css?body=1" for 127.0.0.1 at 2015-08-04 17:38:22 -0700
+
+
+Started GET "/assets/fontawesome-webfont-bdd5fe963cf9a6bcf9c449166e2e5a57.woff2?v=4.3.0" for 127.0.0.1 at 2015-08-04 17:38:22 -0700
+
+
+Started GET "/assets/homewave-downgray-ab629b34375099ea999a129e8b5e026d.png" for 127.0.0.1 at 2015-08-04 17:38:22 -0700
