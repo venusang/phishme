@@ -1,4 +1,4 @@
-<div id="projects-main">
+<div class="view-all-projects">
 	<!-- @projects.sort_by{|project| project.title.downcase} -->
 
 	<ul class="nav nav-tabs" role="tablist">
@@ -16,7 +16,7 @@
 				<li class="list-group-item">No projects.</li>
 			<% end %>
 
-			<% @project_by_title.each do |project| %>
+			<% @projects.sort_by {|obj| obj.title }.each do |project| %>
 				<li>
 					<%= link_to project.title,  project_path(project), class:"list-group-item" %>
 					<%= link_to '<i class="fa fa-remove"></i>'.html_safe, project,
@@ -25,18 +25,18 @@
 			<% end %>
 		</ul>
 	</div>
-
 <!-- CREATED BY  -->
+
 	<div role="tabpanel" class="tab-pane" id="created_by">
 		<ul class="list-group list-unstyled">
 			<% if @projects.empty? %>
 				<li class="list-group-item">No projects.</li>
 			<% end %>
-			<% @projects_created_at.each do |project| %>
+			<% @projects.sort_by {|obj| obj.created_at }.reverse.each do |project| %>
 				<li>
 						<%= link_to project.title + ' (' + project.created_at.strftime("%b %-d, %Y %r")+')',  project_path(project),class:"list-group-item" %>
 						<%= link_to '<i class="fa fa-remove"></i>'.html_safe, project,
-				        method: :delete, data: { confirm: 'Are you sure?' }, class: "remove-btn btn" %>
+				        method: :delete, data: { confirm: 'Are you sure?' }, class: "remove-btn btn btn-link" %>
 				</li>
 			<% end %>
 		</ul>
@@ -48,7 +48,7 @@
 			<% if @projects.empty? %>
 				<li class="list-group-item">No projects.</li>
 			<% end %>
-			<% @projects_updated_at.each do |project| %>
+			<% @projects.sort_by {|obj| obj.updated_at }.reverse.each do |project| %>
 				<li>
 						<%= link_to project.title + ' (' + project.updated_at.strftime("%b %-d, %Y %r")+')',  project_path(project),class:"list-group-item" %>
 						<%= link_to '<i class="fa fa-remove"></i>'.html_safe, project,

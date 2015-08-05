@@ -1,7 +1,6 @@
 /* Bootstrap overrides */
-/* $body-bg: #394A59; */
 $font-family-sans-serif:	'Questrial', sans-serif;
-$brand-primary:				darken(#337ab7 , 6.5%) !default; 
+$brand-primary:				darken(#394A59 , 6.5%) !default; 
 $link-color:				#333;
 
 
@@ -10,6 +9,8 @@ $border-radius-large:       0px !default;
 $border-radius-small:       0px !default;
 
 
+/* Application variables */
+$panel-font-color: #fff;
 
 /* Import Boostrap */
 @import "bootstrap-sprockets";
@@ -21,23 +22,35 @@ $border-radius-small:       0px !default;
 label{
 	color: $brand-primary;
 }
+body { 
+	background-image: url(image_path('homewave-downgray.png')); 
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+}
+
+
+.panel {
+	.panel-heading {
+		background-color: $brand-primary;
+		color: $panel-font-color;
+		a{
+			color: $panel-font-color;
+		}
+	}
+}
+.nav-tabs li:hover{
+	cursor: pointer;
+}
+
+.tab-pane{
+	margin-top: 10px;
+}
 
 .project-title{
 	color:#e63c2e;
 }
 
-#left-nav{
-	border-radius: 4px;
-	padding: 0.50em;
-	background: #efefef;
-	min-height: 200px;
-	height: 100%;
-	h3{
-		padding:0;
-		margin: 0;
-	}
-}
-#projects-main {
+.view-all-projects {
 	.fa-remove {
 		opacity: 0.50;
 	}
@@ -53,18 +66,37 @@ label{
 			top: 5px;
 
 		}
+		:hover{
+			background:$gray-lighter;
+		}
+		.list-group-item {
+			background: $state-warning-bg;
+
+		}
+		a.list-group-item:hover{
+			background: #e63c2e;
+			color:#fff;
+		}
 	}
 }
 
-.nav-tabs li:hover{
-	cursor: pointer;
-}
+.show-project-items{
 
-.tab-pane{
-	margin-top: 10px;
-}
+	ul.list-group {
+		-webkit-box-shadow: -1px 2px 6px -1px rgba(140,140,140,0.43);
+		-moz-box-shadow: -1px 2px 6px -1px rgba(140,140,140,0.43);
+		box-shadow: -1px 2px 6px -1px rgba(140,140,140,0.43);
 
-.list-group li.header{
-	background: $state-warning-bg;
-}
+		li.list-group-item{
+			border-top: 1px dashed $gray-lighter;
+			border-bottom: 1px dashed $gray-lighter;
+		}
 
+		li.header, li:last-child{
+			background: $state-warning-bg;
+			border-bottom: 1px solid $gray-lighter;
+			border-top: 1px solid $gray-lighter;
+		}
+
+	}
+}

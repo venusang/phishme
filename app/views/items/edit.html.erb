@@ -1,19 +1,14 @@
-
 <h4>Project: <%= @project.title %></h4>
 
 <%= form_for([@project, @item], :url => { :action => :update }) do |f| %>
   <% if @item.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@item.errors.count, "error") %>
-        prohibited this project from being saved:
-      </h2>
-
-      <ul>
-      <% @item.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+    <div id="notice" class="alert alert-danger alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div id="error_explanation">
+        <% @item.errors.full_messages.each do |msg| %>
+          <i class="fa fa-warning "></i> <%= msg %><br />
+        <% end %>
+      </div>
     </div>
   <% end %>
   <div class="form-group">
@@ -27,7 +22,7 @@
 
   <ul class="list list-unstyled list-inline">
     <li><div class="actions"><%= f.submit :class => "btn btn-warning" %></div></li>
-    <li><%= link_to 'cancel', :back , class: "btn btn-default" %></li>
-    
+    <li><%= link_to 'cancel', @project, class: "btn btn-default" %></li>
+
   </ul>
 <% end %>

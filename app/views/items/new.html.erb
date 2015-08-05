@@ -6,13 +6,9 @@
     <div id="notice" class="alert alert-danger alert-dismissible" role="alert">
       <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       <div id="error_explanation">
-           <span class="label label-danger"><%= pluralize(@item.errors.count, "error") %></span>
-          prohibited this project from being saved:
-        <ul class="list-unstyled">
         <% @item.errors.full_messages.each do |msg| %>
-          <li><i class="fa fa-warning "></i> <%= msg %></li>
+          <i class="fa fa-warning "></i> <%= msg %><br />
         <% end %>
-        </ul>
       </div>
     </div>
   <% end %>

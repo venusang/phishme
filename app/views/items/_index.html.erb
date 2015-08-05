@@ -1,13 +1,12 @@
+<div class="show-project-items">
     <ul class="list-group list-unstyled">
       <li class="list-group-item header">
         <h4 class="project-title"><%= link_to @project.title, edit_project_path(@project) %> </h4>
       </li>
       <% if @project.items.empty? %>
       <li class="list-group-item">
-        <div class="alert alert-info">
           <p>There are no items to list.
           <%= link_to '<i class="fa fa-plus"></i> add new item'.html_safe, new_project_item_path(project), :class => "btn btn-default text-right" %></p>
-        </div>
       </li>
     <% else %>
 
@@ -24,7 +23,6 @@
           <%= link_to '<i class="fa fa-check-square-o"></i>'.html_safe, edit_project_item_path(@project, item) %>
         <% end %>
         <%= link_to item.action, edit_project_item_path(@project, item) %>
-        
       </li>
     <% end %>
       <li class="list-group-item add-new-item text-right"> <%= link_to '<i class="fa fa-plus"></i> Add New Item...'.html_safe, new_project_item_path(project) %></li>
@@ -34,3 +32,4 @@
           :method => :delete, :id => "clearer" %>
 
   <% end %>
+</div>
