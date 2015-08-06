@@ -11,7 +11,8 @@ $border-radius-small:       0px !default;
 
 /* Application variables */
 $panel-font-color: #fff;
-
+$phishme-red: #e63c2e;
+$phishme-blue: #394A59;
 /* Import Boostrap */
 @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -42,13 +43,6 @@ body {
 	cursor: pointer;
 }
 
-.tab-pane{
-	margin-top: 10px;
-}
-
-.project-title{
-	color:#e63c2e;
-}
 
 .view-all-projects {
 	.fa-remove {
@@ -58,7 +52,12 @@ body {
 		opacity: 1;
 	}
 
+	ul.list-group li:first-child a.list-group-item:first-child{
+		border-top: none !important;
+	}
+
 	ul.list-group li{
+
 		position: relative;
 		.remove-btn{
 			position: absolute;
@@ -69,18 +68,25 @@ body {
 		:hover{
 			background:$gray-lighter;
 		}
-		.list-group-item {
-			background: $state-warning-bg;
-
-		}
 		a.list-group-item:hover{
-			background: #e63c2e;
+			background: $phishme-red;
 			color:#fff;
 		}
+		
 	}
+
+
 }
 
 .show-project-items{
+	.well{
+		background-color: $phishme-red;
+		padding: 5px 10px;
+		margin-bottom: 10px;
+		a{
+			color: #fff;
+		}
+	}
 
 	ul.list-group {
 		-webkit-box-shadow: -1px 2px 6px -1px rgba(140,140,140,0.43);
@@ -92,13 +98,15 @@ body {
 			border-bottom: 1px dashed $gray-lighter;
 		}
 
-		li.header, li:last-child{
-			background: $state-warning-bg;
+		li:last-child{
 			border-bottom: 1px solid $gray-lighter;
 			border-top: 1px solid $gray-lighter;
 		}
 		li.no-item-to-list{
 			background:#fff;
+		}
+		li.list-group-item:first-child{
+			border-top: none !important;
 		}
 
 	}

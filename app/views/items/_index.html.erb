@@ -1,35 +1,122 @@
 <div class="show-project-items">
-    <ul class="list-group list-unstyled">
-      <li class="list-group-item header">
-        <h4 class="project-title"><%= link_to @project.title, edit_project_path(@project) %> </h4>
-      </li>
-      <% if @project.items.empty? %>
-      <li class="list-group-item no-item-to-list">
-          <p>There are no items to list.
-          <%= link_to '<i class="fa fa-plus"></i> add new item'.html_safe, new_project_item_path(project), :class => "btn btn-default text-right" %></p>
-      </li>
-    <% else %>
+  <div class="well"><h4 class="project-title"><%= link_to @project.title, edit_project_path(@project) %></h4></div>
 
+   
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#by_title" aria-controls="by_title" role="tab" data-toggle="tab" >All <span class="badge"><%= @project.items.length %></span></a></li>
+    <li role="presentation"><a data-target="#active_items" data-toggle="tab">Active <span class="badge">2</span></a></li>
+    <li role="presentation"><a data-target="#completed_items" data-toggle="tab">Completed <span class="badge"><%= @project.items.length %></span></a></li>
+  </ul>
+
+
+<div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="by_title">
+      <ul class="list-group list-unstyled">
+  <% if @project.items.empty? %>
+        <li class="list-group-item no-item-to-list">
+            <p>There are no items to list.
+            <%= link_to '<i class="fa fa-plus"></i> add new item'.html_safe, new_project_item_path(project), :class => "btn btn-default text-right" %></p>
+        </li>
+  <% else %>
+
+  <!-- sort by most recently updated -->
     <% @project.items.each do |item| %>
-      <li class="list-group-item <%= "#{item.done? ? 'done' : 'not-done'}" %>">
-        <% unless item.done? %>
-          <%= link_to '<i class="fa fa-square-o"></i>'.html_safe,
-                { :controller => :items, :action => :update,
-                  :id => item.id, :project_id => @project.id,
-                  :item => { :done => true } },
-                { :method => :patch } %>
-        <% end %>
-        <% unless !item.done? %>
-          <%= link_to '<i class="fa fa-check-square-o"></i>'.html_safe, edit_project_item_path(@project, item) %>
-        <% end %>
-        <%= link_to item.action, edit_project_item_path(@project, item) %>
-      </li>
+        
+        <li class="list-group-item <%= "#{item.done? ? 'done' : 'not-done'}" %>">
+          
+          <% unless item.done? %>
+            <%= link_to '<i class="fa fa-square-o"></i>'.html_safe,
+                  { :controller => :items, :action => :update,
+                    :id => item.id, :project_id => @project.id,
+                    :item => { :done => true } },
+                  { :method => :patch } %>
+          <% end %>
+          
+          <% unless !item.done? %>
+            <%= link_to '<i class="fa fa-check-square-o"></i>'.html_safe, edit_project_item_path(@project, item) %>
+          <% end %>
+
+
+          <%= link_to item.action, edit_project_item_path(@project, item) %>
+        </li>
     <% end %>
-      <li class="list-group-item add-new-item text-right"> <%= link_to '<i class="fa fa-plus"></i> Add New Item...'.html_safe, new_project_item_path(project) %></li>
-    </ul>
-
-    <%= link_to '<i class="fa fa-eraser"></i> Clear Completed Items'.html_safe, clear_project_path(project),
-          :method => :delete, :id => "clearer" %>
-
   <% end %>
-</div>
+
+        <li class="list-group-item add-new-item text-right"> <%= link_to '<i class="fa fa-plus"></i> Add New Item...'.html_safe, new_project_item_path(project) %></li>
+      </ul>
+
+
+      <%= link_to '<i class="fa fa-eraser"></i> Clear Completed Items'.html_safe, clear_project_path(project),
+            :method => :delete, :id => "clearer" %>
+    </div><!-- by_title -->
+
+
+
+    <div role="tabpanel" class="tab-pane" id="active_items">
+      <ul class="list-group list-unstyled">
+  <% if @project.items.empty? %>
+        <li class="list-group-item no-item-to-list">
+            <p>There are no items to list.
+            <%= link_to '<i class="fa fa-plus"></i> add new item'.html_safe, new_project_item_path(project), :class => "btn btn-default text-right" %></p>
+        </li>
+  <% else %>
+
+  <!-- sort by active -->
+    <% @project.items.each.sort_by {|obj| obj.updated_at }.each do |item| %>
+         <% if item.done %>
+         <% else %>
+        <li class="list-group-item <%= "#{item.done? ? 'done' : 'not-done'}" %>">
+          <%= link_to '<i class="fa fa-square-o"></i>'.html_safe,
+                    { :controller => :items, :action => :update,
+                      :id => item.id, :project_id => @project.id,
+                      :item => { :done => true } },
+                    { :method => :patch } %>
+           <%= link_to item.action, edit_project_item_path(@project, item) %>
+        </li>
+        <% end %>
+    <% end %>
+  <% end %>
+
+        <li class="list-group-item add-new-item text-right"> <%= link_to '<i class="fa fa-plus"></i> Add New Item...'.html_safe, new_project_item_path(project) %></li>
+      </ul>
+
+
+      <%= link_to '<i class="fa fa-eraser"></i> Clear Completed Items'.html_safe, clear_project_path(project),
+            :method => :delete, :id => "clearer" %>
+    </div><!-- active_items -->
+
+    <div role="tabpanel" class="tab-pane" id="completed_items">
+      <ul class="list-group list-unstyled">
+  <% if @project.items.empty? %>
+        <li class="list-group-item no-item-to-list">
+            <p>There are no items to list.
+            <%= link_to '<i class="fa fa-plus"></i> add new item'.html_safe, new_project_item_path(project), :class => "btn btn-default text-right" %></p>
+        </li>
+  <% else %>
+
+  <!-- sort by completed -->
+    <% @project.items.each.sort_by {|obj| obj.updated_at }.each do |item| %>
+         <% if !item.done %>
+         <% else %>
+        <li class="list-group-item <%= "#{item.done? ? 'done' : 'not-done'}" %>">
+          <%= link_to '<i class="fa fa-check-square-o"></i>'.html_safe, edit_project_item_path(@project, item) %>
+          <%= link_to item.action, edit_project_item_path(@project, item) %>
+        </li>
+        <% end %>
+    <% end %>
+  <% end %>
+
+        <li class="list-group-item add-new-item text-right"> <%= link_to '<i class="fa fa-plus"></i> Add New Item...'.html_safe, new_project_item_path(project) %></li>
+      </ul>
+
+
+      <%= link_to '<i class="fa fa-eraser"></i> Clear Completed Items'.html_safe, clear_project_path(project),
+            :method => :delete, :id => "clearer" %>
+
+
+    </div><!-- completed_items -->
+
+
+</div><!--tab-content -->
+
+</div><!-- show-project-items -->
