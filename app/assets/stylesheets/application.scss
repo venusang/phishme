@@ -30,6 +30,11 @@ body {
 }
 
 
+.panel-default > .panel-heading .badge.total-projects{
+	background-color:$phishme-red;
+	color: #fff;
+	margin-left: 5px;
+}
 .panel {
 	.panel-heading {
 		background-color: $brand-primary;

@@ -1,5 +1,4 @@
 <h4>Project: <%= @project.title %></h4>
-
 <%= form_for([@project, @item], :url => { :action => :update }) do |f| %>
   <% if @item.errors.any? %>
     <div id="notice" class="alert alert-danger alert-dismissible" role="alert">

@@ -8,15 +8,14 @@
     <title>Todo App</title>
     <link href='http://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
     <%= stylesheet_link_tag    "application", media: "all" %>
-    
-
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
   </head>
 
   <body>
-  <br />
-  <div class="container-fluid">
+    <br />
+
+    <div class="container-fluid">
       <div class="col-md-4"></div>
       <div class="col-md-4">
         <div class="panel panel-default">
@@ -33,14 +32,11 @@
                     <%= notice %>
                   </div>
               <% end %>
-
-              <%= yield %>
-            </div>
+<%= yield %>
+            </div><!-- panel-body -->
           </div><!-- panel -->
-        </div><!-- col-md-4 -->
-        <div class="col-md-4"></div>
-    </div><!-- container -->
+      </div><!-- col-md-4 -->
+      <div class="col-md-4"></div>
+      </div><!-- container-fluid -->
   </body>
-
-
 </html>
