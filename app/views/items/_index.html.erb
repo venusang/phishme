@@ -35,7 +35,10 @@
             </li>
         <% end %>
       <% end %>
-            <li class="list-group-item add-new-item"> <%= link_to '<i class="fa fa-plus"></i> Add New Item...'.html_safe, new_project_item_path(project) %></li>
+            <% if @project.items.empty? %>
+            <% else %>
+        <li class="list-group-item add-new-item"> <%= link_to '<i class="fa fa-plus"></i> Add New Item...'.html_safe, new_project_item_path(project) %></li>
+            <% end %>
           </ul>
         </div><!-- by_title -->
         <div role="tabpanel" class="tab-pane" id="active_items">
@@ -62,8 +65,10 @@
               <% end %>
           <% end %>
           <% end %>
-
-            <li class="list-group-item add-new-item"> <%= link_to '<i class="fa fa-plus"></i> Add New Item...'.html_safe, new_project_item_path(project) %></li>
+            <% if @project.items.empty? %>
+            <% else %>
+        <li class="list-group-item add-new-item"> <%= link_to '<i class="fa fa-plus"></i> Add New Item...'.html_safe, new_project_item_path(project) %></li>
+            <% end %>
           </ul>
         </div><!-- active_items -->
 
@@ -87,7 +92,10 @@
             <% end %>
         <% end %>
       <% end %>
-            <li class="list-group-item add-new-item"> <%= link_to '<i class="fa fa-plus"></i> Add New Item...'.html_safe, new_project_item_path(project) %></li>
+            <% if @project.items.empty? %>
+            <% else %>
+        <li class="list-group-item add-new-item"> <%= link_to '<i class="fa fa-plus"></i> Add New Item...'.html_safe, new_project_item_path(project) %></li>
+            <% end %>
           </ul>
         </div><!-- completed_items -->
         
