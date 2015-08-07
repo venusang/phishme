@@ -57,12 +57,18 @@ body {
 		opacity: 1;
 	}
 
+	.no-projects{
+		border-top: none !important;
+	}
 	ul.list-group li:first-child a.list-group-item:first-child{
 		border-top: none !important;
 	}
 
 	ul.list-group li{
 
+		.list-group-item:first-child{
+			border-top: none !important;
+		}
 		position: relative;
 		.remove-btn{
 			position: absolute;
