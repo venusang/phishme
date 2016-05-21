@@ -1,7 +1,7 @@
 # pm-todo-rails
 This is a Ruby on Rails (http://rubyonrails.org) application that I worked on in August 2015.
 
-My role in this project:
+My role in this project: 
  - Front-End Development
  - UI Redesign
  - UX 
